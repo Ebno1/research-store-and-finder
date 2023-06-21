@@ -1,0 +1,16 @@
+.container{
+  display: grid;
+  grid-template-columns:  25% 25% 25% 25%;
+    padding: 8px 20px;
+    background-color: rgb(231, 232, 238);
+    margin: 5px;
+    cursor: pointer;
+}
+
+.container:hover{
+    background-color: rgb(237, 243, 248);
+}
+
+.students{
+    margin-top: 15px;
+}

@@ -1,0 +1,17 @@
+.upload_browse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.upload_browse *{
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 20px;
+  width: 7rem;
+  background-color: #2196F3;
+  color: #fff;
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+.links{
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+}
+
+.links a{
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    color: black;
+    font-weight: 600;
+}
+
+.active{
+    background-color: #9179e9;
+}

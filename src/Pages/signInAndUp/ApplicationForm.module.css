@@ -1,0 +1,103 @@
+.container h3{
+  text-align: center;
+}
+
+.formCont {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.fieldGroup {
+  margin-bottom: 20px;
+}
+
+.fieldGroup label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.fieldGroup input,
+.fieldGroup select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.addButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.checkboxGroup {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.checkboxGroup label {
+  margin-left: 10px;
+  font-weight: bold;
+  display: inline;
+}
+.checkboxGroup input{
+  display: inline;
+  width: 1rem;
+}
+
+.additionalFields {
+  margin-top: 20px;
+}
+
+.additionalFields label {
+  margin-bottom: 5px;
+}
+
+.additionalFields input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submitButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .addButton,
+  .submitButton {
+    padding: 6px 12px;
+  }
+}
+
+.SuccessPage{
+  text-align: center;
+  margin-top: 20%;
+}
+
+.errorPage{
+  text-align: center;
+  margin-top: 20%;
+}
