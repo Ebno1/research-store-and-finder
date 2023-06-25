@@ -3,7 +3,8 @@ import classes from "./Login.module.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Auth } from "../../config/firebase";
 import { Link } from "react-router-dom";
-import GoogleIcon from '@mui/icons-material/Google';
+import GoogleIcon from "@mui/icons-material/Google";
+import Header from "../BasicUserPage/Header";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -27,26 +28,44 @@ function Login() {
   }
 
   return (
-    <div className={classes.container}>
-      <h2>Login </h2>
-      <form onSubmit={handleSubmit}>
-        <div className={classes.formGroup}>
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" value={email} onChange={handleEmailChange} required />
-        </div>
+    <div>
+      <Header />
+      <div className={classes.container}>
+        <h2>Login </h2>
+        <form onSubmit={handleSubmit}>
+          <div className={classes.formGroup}>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+              required
+            />
+          </div>
 
-        <div className={classes.formGroup}>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" value={password} onChange={handlePasswordChange} required />
+          <div className={classes.formGroup}>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
+          </div>
+          <button className={classes.button} type="submit">
+            Submit
+          </button>
+        </form>
+        <p className={classes.text}>Or login using</p>
+
+        <div className={classes.iconContainer}>
+          <GoogleIcon className={classes.googleIcon} />
+          <Link to="/apply">Apply for an account? </Link>
+          <br></br>
+          <Link to="/signup"> Signup</Link>
         </div>
-        <button className={classes.button} type="submit">Submit</button>
-      </form>
-      <p className={classes.text}>Or login using</p>
-      
-      <div className={classes.iconContainer}>
-        <GoogleIcon className={classes.googleIcon} />
-        <Link to='/apply'>Apply for an account?</Link>
-        <Link to='/signup'>Signup</Link>
       </div>
     </div>
   );

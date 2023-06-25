@@ -10,6 +10,7 @@ import LoginPage from "./Pages/signInAndUp/Login";
 import About from "./Pages/BasicUserPage/About";
 import Contact from "./Pages/BasicUserPage/Contact";
 import Service from "./Pages/BasicUserPage/Service";
+import Footer from "./Pages/BasicUserPage/Footer";
 
 // import CreateAccount from "./components/createaccount";
 
@@ -27,8 +28,12 @@ import SuccessPage from "./Pages/signInAndUp/SuccessPage";
 import AccountApplication from "./components/Dashboard/account/AccountApplication";
 import Researchers from "./components/Dashboard/account/Researches";
 import Students from "./components/Dashboard/account/Students";
-import StudentDetailPage, { studentDetailLoader } from "./components/Dashboard/account/StudentDetailPage";
-import ResearcherDetailPage, { ResearcherDetailLoader } from "./components/Dashboard/account/ResearcherDetailPage";
+import StudentDetailPage, {
+  studentDetailLoader,
+} from "./components/Dashboard/account/StudentDetailPage";
+import ResearcherDetailPage, {
+  ResearcherDetailLoader,
+} from "./components/Dashboard/account/ResearcherDetailPage";
 import SignUp from "./Pages/signInAndUp/SignUp";
 
 const router = createBrowserRouter(
@@ -47,19 +52,27 @@ const router = createBrowserRouter(
         <Route path="success" element={<SuccessPage />} />
         <Route path="upload" element={<Upload />} />
         <Route path="login" element={<LoginPage />} />
-        <Route path="apply" element={<ApplicationForm/>} />
+        <Route path="apply" element={<ApplicationForm />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="dashboard" element={<DashboardHome />}>
           <Route index element={<LatestTables />} />
           <Route path="users" element={<Datatable />} />
           <Route path="account" element={<AccountApplication />}>
             <Route path="researchers">
-              <Route index element={<Researchers />}/>
-              <Route path=":id" element={<ResearcherDetailPage />} loader={ResearcherDetailLoader} />
+              <Route index element={<Researchers />} />
+              <Route
+                path=":id"
+                element={<ResearcherDetailPage />}
+                loader={ResearcherDetailLoader}
+              />
             </Route>
             <Route path="students">
-              <Route index element={<Students />}/>
-              <Route path=":id" element={<StudentDetailPage />} loader={studentDetailLoader} />
+              <Route index element={<Students />} />
+              <Route
+                path=":id"
+                element={<StudentDetailPage />}
+                loader={studentDetailLoader}
+              />
             </Route>
           </Route>
         </Route>

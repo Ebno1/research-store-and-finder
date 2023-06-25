@@ -1,17 +1,25 @@
 .upload_browse {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding-bottom: 10%;
+  margin-top: 2%;
 }
 
-.upload_browse *{
+.upload_browse * {
   text-decoration: none;
   text-align: center;
   padding: 10px 20px;
   width: 7rem;
-  background-color: #2196F3;
+  background-color: rgba(255, 140, 0, 0.486);
   color: #fff;
   cursor: pointer;
+  border-radius: 15px;
+}
+.upload_browse :hover {
+  background-color: darkorange;
+  transform: scale(1.06);
+  transition: 0.7s ease all;
 }
