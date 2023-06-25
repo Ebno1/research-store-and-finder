@@ -1,0 +1,55 @@
+/* AboutPage.css */
+
+.aboutpage {
+  padding: 2rem;
+}
+
+.container {
+  background-color: #f3f1f1;
+  padding: 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 50%;
+  margin-left: 20%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: darkorange;
+}
+@keyframes positionalChangeAnimation {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.container p {
+  animation: positionalChangeAnimation 1.5s ease-in-out;
+}
+
+@keyframes dissolveAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container p {
+  animation: dissolveAnimation 1s ease-in-out;
+}
+p {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}

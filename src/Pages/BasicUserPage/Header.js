@@ -7,7 +7,7 @@ const Header = () => {
       return classes.active;
     }
   }
-  
+
   return (
     <>
       <header className={classes.header}>
@@ -16,7 +16,7 @@ const Header = () => {
           className={classes.logo}
           style={{ textDecoration: "none" }}
         >
-          <b>Project</b> Finder
+          <b>Thesis</b> Finder
         </Link>
         <nav className={classes.nav}>
           <ul>
