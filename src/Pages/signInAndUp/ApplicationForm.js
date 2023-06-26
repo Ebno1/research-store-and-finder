@@ -89,7 +89,6 @@ const ApplicationForm = () => {
 
   return (
     <div>
-      <Header />
       <div className={classes.container}>
         <form className={classes.formCont} onSubmit={handleFormSubmit}>
           <h3>Application form</h3>

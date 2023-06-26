@@ -45,15 +45,16 @@ const router = createBrowserRouter(
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
         <Route path="browse" element={<BrowseButtons />}></Route>
+        <Route path="upload" element={<Upload />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="apply" element={<ApplicationForm />} />
+        <Route path="signup" element={<SignUp />} />
       </Route>
 
       <Route path="/">
         <Route path="pagenotfound" element={<ErrorPage />} />
         <Route path="success" element={<SuccessPage />} />
-        <Route path="upload" element={<Upload />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="apply" element={<ApplicationForm />} />
-        <Route path="signup" element={<SignUp />} />
+
         <Route path="dashboard" element={<DashboardHome />}>
           <Route index element={<LatestTables />} />
           <Route path="users" element={<Datatable />} />

@@ -57,7 +57,6 @@ function Upload() {
 
   return (
     <div className={classes.all}>
-      <Header />
       <div className={classes.uploadContainer}>
         <h2>Upload Project/Thesis</h2>
         <form onSubmit={handleSubmit}>

@@ -24,7 +24,6 @@ function Login() {
 
   return (
     <div>
-      <Header />
       <div className={classes.container}>
         <h2>Login </h2>
         <form onSubmit={handleSubmit}>
@@ -57,9 +56,12 @@ function Login() {
 
         <div className={classes.iconContainer}>
           <GoogleIcon className={classes.googleIcon} />
-          <Link to="/apply">Apply for an account? </Link>
-          <br></br>
-          <Link to="/signup"> Signup</Link>
+          <div className={classes.links}>
+            <Link to="/apply" className={classes.link1}>
+              Apply for an account?{" "}
+            </Link>
+            <Link to="/signup"> Signup</Link>
+          </div>
         </div>
       </div>
     </div>

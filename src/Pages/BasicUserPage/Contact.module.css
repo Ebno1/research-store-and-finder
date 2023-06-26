@@ -1,13 +1,3 @@
-/* ServicePage.css */
-* {
-  font-family: poppins;
-}
-/* .ourservice {
-    text-decoration: underline;
-    text-underline-offset: 1.2rem;
-    text-decoration-thickness: 4px;
-    
-  } */
 .servicepage {
   padding: 3rem;
 }
@@ -27,10 +17,7 @@
 
 .serviceitem {
   background-color: #f5f3f38c;
-
   padding: 4rem;
-  margin-left: 20%;
-  margin-right: 20%;
   border-radius: 1.5rem;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -41,22 +28,12 @@
   color: #8d8c8c;
   font-weight: 300;
 }
-.serviceitem p :hover {
-  color: darkorange;
-}
 
-@keyframes drawUnderline {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
 .servicecontainer {
   display: flex;
   justify-content: center;
 }
+
 .ourservice {
   position: relative;
   display: inline-block;
@@ -73,10 +50,12 @@
   background-color: darkorange;
   animation: drawUnderline 0.5s forwards;
 }
+
 .contactform {
   max-width: 600px;
   margin: 0 auto;
 }
+
 .contactform ::placeholder {
   opacity: 100%;
 }
@@ -122,6 +101,7 @@ button:hover {
 .serviceitem {
   animation: dissolveAnimation 0.5s ease-in-out;
 }
+
 @keyframes positionalChangeAnimation {
   0% {
     transform: translateX(-100px);
@@ -135,70 +115,32 @@ button:hover {
   animation: positionalChangeAnimation 1s ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
-  .servicelist {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* Mobile View */
+@media (max-width: 767px) {
+  .servicepage {
+    padding: 2rem;
+  }
+
+  .serviceitem {
+    padding: 2rem;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
-/* ContactPage.css */
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .servicepage {
+    padding: 2rem;
+  }
 
-/* .contactpage {
-    background-color: #f2f2f2;
-    padding: 5rem;
-    border-radius: 1.5rem;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    margin-left: 20%;
-    margin-top: 3%;
-    margin-right: 20%;
-    margin-bottom: 3%;
+  .servicelist {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-  
-  h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: darkorange;
+
+  .serviceitem {
+    padding: 3rem;
+    margin-left: 15%;
+    margin-right: 15%;
   }
-  
-  .contactform {
-    max-width: 600px;
-    margin: 0 auto;
-    
-  }
-  .contactform ::placeholder {
-    opacity: 80%;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 0.2px solid rgb(66, 64, 62);
-    border-radius: 0.5rem;
-    background: transparent;
-    
-  }
-  
-  textarea {
-    height: 180px;
-    
-  }
-  
-  button {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #f5f3f3;
-    color: #333;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #e0e0e0;
-  }
-   */
+}

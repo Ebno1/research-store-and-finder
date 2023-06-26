@@ -24,11 +24,11 @@ form {
 }
 
 .formGroup {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 label {
-  font-weight: bold;
+  font-weight: normal;
 }
 
 input[type="text"],
@@ -36,7 +36,7 @@ input[type="file"] {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   background: transparent;
 }
 
