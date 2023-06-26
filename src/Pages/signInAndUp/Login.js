@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Login.module.css";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Auth } from "../../config/firebase";
 import { Link } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
 import Header from "../BasicUserPage/Header";
@@ -18,8 +20,11 @@ function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+    signInWithEmailAndPassword(Auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user)
+    })
   }
 
   return (
