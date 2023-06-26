@@ -19,6 +19,10 @@ h1 {
   margin-bottom: 2rem;
   color: darkorange;
 }
+.container p {
+  font-size: large;
+  line-height: 1.5rem;
+}
 @keyframes positionalChangeAnimation {
   0% {
     transform: translateY(-100px);

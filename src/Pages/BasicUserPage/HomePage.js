@@ -3,8 +3,8 @@ import React from "react";
 import classes from "./HomePage.module.css";
 import UploadButtons from "./UploadButtons";
 import Footer from "./Footer";
-import book from "../../assets/book.png";
-import researcher from "../../assets/researcher.png";
+import university from "../../assets/university.png";
+import user from "../../assets/user.png";
 
 function HomePage() {
   return (
@@ -13,11 +13,8 @@ function HomePage() {
         <div className={classes.description}>
           <h1>Thesis store & finder</h1>
           <p>
-            We offer a wide range of services to meet all your needs. Whether
-            you're looking for web development, graphic design, or content
-            creation, we have you covered. Our team of experts is dedicated to
-            providing you with the highest quality work, delivered on time and
-            within budget. Contact us today to get started!
+            "Discover, Connect, Succeed: The Ultimate Thesis Store & Finder -
+            Your One-Stop Solution for Academic Excellence!"
           </p>
         </div>
         <UploadButtons />
@@ -29,27 +26,27 @@ function HomePage() {
       <div className={classes.plist}>
         <div className={classes.imgbook}>
           <div className={classes.fbook}>
-            <img src={book} alt="Book" />
+            <img src={university} alt="Book" />
           </div>
           <div className={classes.imgbookin}>
             <h2>More than 43 Universities</h2>
             <p>
-              We offer a wide range of services to meet all your needs. Whether
-              you're looking for web development,<br></br> graphic design, or
-              content creation, we have you covered.
+              Uncover a treasure trove of academic brilliance - Over 43
+              universities' thesis papers conveniently accessible in one
+              comprehensive platform.
             </p>
           </div>
         </div>
         <div className={classes.imgbook}>
           <div className={classes.sbook}>
-            <img src={researcher} alt="Book" />
+            <img src={user} alt="Book" />
           </div>
           <div className={classes.imgbookin}>
             <h2>Different Professionals</h2>
             <p>
-              We offer a wide range of services to meet all your needs. Whether
-              you're looking for web development,<br></br> graphic design, or
-              content creation, we have you covered.
+              Dive into a diverse collection of professional expertise - Explore
+              a vast array of thesis papers from various fields and disciplines
+              for comprehensive insights and inspiration.
             </p>
           </div>
         </div>

@@ -18,7 +18,6 @@ function Login() {
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
-
   // const googleSigninHandler=()=>{
   //   fetchSignInMethodsForEmail(email).then((signInMethods)=>{
   //     if(signInMethods.includes(googleProvider.PROVIDER_ID)){
