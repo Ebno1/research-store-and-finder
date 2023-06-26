@@ -1,28 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./upload.module.css";
-import Header from "./Header";
+import PlagPopup from "./PlagPopup";
+import react from "react-dom";
+
+const AlertPopup = () => {
+  return (
+    <>
+      {react.createPortal(
+        <div className={classes.alert}>
+          Your document is successfully uploaded.
+        </div>,
+        document.getElementById("successPop")
+      )}
+    </>
+  );
+};
 
 function Upload() {
   const [author, setAuthor] = useState("");
-  const [project, setProject] = useState("");
-  const [university, setUniversity] = useState("");
-  const [department, setDepartment] = useState("");
+  const [description, setdescription] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [plagiarismArr, setPlagiarismArr] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
 
   const handleAuthorChange = (event) => {
     setAuthor(event.target.value);
   };
 
-  const handleProjectChange = (event) => {
-    setProject(event.target.value);
-  };
-
-  const handleUniversityChange = (event) => {
-    setUniversity(event.target.value);
-  };
-
-  const handleDepartmentChange = (event) => {
-    setDepartment(event.target.value);
+  const handledescriptionChange = (event) => {
+    setdescription(event.target.value);
   };
 
   const handleFileChange = (event) => {
@@ -38,26 +45,59 @@ function Upload() {
     event.preventDefault();
   };
 
-  function handleSubmit(event) {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(selectedFile.name);
     let formData = new FormData();
     formData.append("name", author);
     formData.append("file", selectedFile, selectedFile.name);
-    formData.append("description", department);
+    formData.append("description", description);
 
-    fetch("http://127.0.0.1:8000/file/upload/", {
-      method: "POST",
-      body: formData,
-      // headers: {
-      //   "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-      // },
-    });
-  }
+    setIsLoading(true);
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/file/upload/", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        throw new Error("something went wrong");
+      }
+
+      const data = await res.json();
+
+      if (data.message === "uploading_Err") {
+        setPlagiarismArr(data.files);
+      } else {
+        setShowSuccessAlert(true);
+      }
+    } catch (err) {
+      console.log(err.message);
+      //redirect to something went wrong
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    if (showSuccessAlert) {
+      const timeout = setTimeout(() => {
+        setShowSuccessAlert(false);
+      }, 5000);
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [showSuccessAlert]);
 
   return (
     <div className={classes.all}>
-      <Header />
+      {plagiarismArr.length !== 0 && (
+        <PlagPopup datArr={plagiarismArr} cancelPop={setPlagiarismArr} />
+      )}
+
+      {showSuccessAlert && <AlertPopup />}
+
       <div className={classes.uploadContainer}>
         <h2>Upload Project/Thesis</h2>
         <form onSubmit={handleSubmit}>
@@ -68,33 +108,18 @@ function Upload() {
               id="author"
               value={author}
               onChange={handleAuthorChange}
+              required
             />
           </div>
+
           <div className={classes.formGroup}>
-            <label htmlFor="project">Project Name:</label>
+            <label htmlFor="description">Description:</label>
             <input
               type="text"
-              id="project"
-              value={project}
-              onChange={handleProjectChange}
-            />
-          </div>
-          <div className={classes.formGroup}>
-            <label htmlFor="university">University:</label>
-            <input
-              type="text"
-              id="university"
-              value={university}
-              onChange={handleUniversityChange}
-            />
-          </div>
-          <div className={classes.formGroup}>
-            <label htmlFor="department">Department:</label>
-            <input
-              type="text"
-              id="department"
-              value={department}
-              onChange={handleDepartmentChange}
+              id="description"
+              value={description}
+              onChange={handledescriptionChange}
+              required
             />
           </div>
 
@@ -119,7 +144,10 @@ function Upload() {
               </div>
             )}
           </div>
-          <button className={classes.button} type="submit">
+          <button
+            className={`${classes.button} ${isLoading ? classes.loading : ""}`}
+            type="submit"
+          >
             Upload
           </button>
         </form>
