@@ -45,6 +45,8 @@ import { ApprStudentDetailLoader } from "./Pages/UserDashboard/ApprStudentDetail
 import Users from "./Pages/UserDashboard/Users";
 
 import Uploaded from "./Pages/Uploads/Uploaded";
+import UploadDetail from "./Pages/Uploads/UploadDetail";
+import Documents from "./Pages/Docs/Documents";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -105,7 +107,12 @@ const router = createBrowserRouter(
             </Route>
           </Route>
           
-          <Route path="uploads" element={<Uploaded />}></Route>
+          <Route path="uploads">
+            <Route index element={<Uploaded />} />
+            <Route path=":id" element={<UploadDetail />} />
+          </Route>
+
+          <Route path="documents" element={<Documents />}></Route>
         </Route>
       </Route>
 

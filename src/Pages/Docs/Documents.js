@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import classes from "./uploaded.module.css";
-import { useNavigate } from "react-router";
+import classes from "../Uploads/uploaded.module.css";
 
-const Uploaded = () => {
+const Documents = () => {
   const [data, setData] = useState([]);
-  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/file/unapprallfiles")
@@ -16,13 +14,14 @@ const Uploaded = () => {
       })
       .then((data) => {
         setData(data);
-
+        // console.log(data.id);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
+//   console.log(data);
 
   return (
     <div>
@@ -32,7 +31,7 @@ const Uploaded = () => {
         const filename = filenameWithExtension.split(".")[0];
 
         return (
-          <div onClick={()=>{navigate(uploaded.id.toString())}} className={classes.documents} key={uploaded.id}>
+          <div className={classes.documents} key={uploaded.id}>
             <p>{uploaded.name}</p>
             <p>{filename}</p>
           </div>
@@ -41,4 +40,4 @@ const Uploaded = () => {
     </div>
   );
 };
-export default Uploaded;
+export default Documents;

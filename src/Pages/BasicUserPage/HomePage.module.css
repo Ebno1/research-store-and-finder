@@ -1,3 +1,7 @@
+*{
+  font-family: "poppins",sans-serif;
+}
+
 @keyframes drawUnderline {
   from {
     width: 0;
