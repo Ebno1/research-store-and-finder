@@ -3,7 +3,6 @@ import { db } from "../../config/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import classes from "./ApplicationForm.module.css";
-import Header from "../BasicUserPage/Header";
 
 const ApplicationForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -89,6 +88,7 @@ const ApplicationForm = () => {
 
   return (
     <div>
+      
       <div className={classes.container}>
         <form className={classes.formCont} onSubmit={handleFormSubmit}>
           <h3>Application form</h3>
@@ -161,7 +161,6 @@ const ApplicationForm = () => {
                 onChange={(e) => handleUniversityChange(index, e.target.value)}
                 required
               >
-                <option>Select an option</option>
                 <option>Adama science and technology university</option>
                 <option>Addis Ababa university</option>
                 <option>Gondor university</option>

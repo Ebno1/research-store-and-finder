@@ -1,0 +1,48 @@
+.modal{
+    width: 40%;
+    background-color: rgb(209, 241, 133);
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 1rem 2rem;
+    z-index: 2;
+    border-radius: 5px;
+    max-height: 50vh;
+    overflow: auto;
+}
+
+.backdrop{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.623);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.head{
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.message{
+    font-weight: 500;
+    margin: 2rem 1rem;
+}
+
+.button{
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border: none;
+    background-color: rgb(223, 72, 72);
+    font-weight: 600;
+    font-size: large;
+}
+
+.button:hover{
+    cursor: pointer;
+}

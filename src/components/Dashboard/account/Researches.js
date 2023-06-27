@@ -5,7 +5,7 @@ import ListTab from "./ListTab";
 import classes from "./listTab.module.css";
 
 const Researchers=()=>{
-    const [individualApplications, setIndividualApplications] = useState([]);
+  const [individualApplications, setIndividualApplications] = useState([]);
   const students = collection(db, "individualApplication");
 
   useEffect(() => {

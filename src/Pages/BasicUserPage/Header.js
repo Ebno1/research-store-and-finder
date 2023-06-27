@@ -43,11 +43,14 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <Link to="/login">Log In</Link>
+              <NavLink to="login" className={Active}>
+                Log In
+              </NavLink>
             </li>
           </ul>
         </nav>
       </header>
+      
       <Outlet />
     </>
   );

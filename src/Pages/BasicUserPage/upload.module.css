@@ -59,7 +59,15 @@ p {
   margin: 0;
 }
 
+.formGroup select {
+  width: 100%;
+  padding: 8px;
+  border: 0.5px solid #ccc;
+  border-radius: 10px;
+}
+
 .button {
+  margin-top: 10px;
   padding: 0.75rem 1rem;
   background-color: #007bff;
   color: #fff;
@@ -69,8 +77,23 @@ p {
   cursor: pointer;
 }
 
+.loading{
+  cursor: not-allowed;
+  background-color: #6a9ace9c;
+}
+
 .button:hover {
-  background-color: #0056b3;
+  background-color: #2e78c7;
+}
+
+.alert{
+  background-color: #363b3f;
+  position: fixed;
+  top: 0;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
 }
 
 @media screen and (max-width: 768px) {

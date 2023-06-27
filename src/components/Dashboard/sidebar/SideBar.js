@@ -15,7 +15,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <Link to="/dashboard" style={{ textDecoration: "none" }}>
+        <Link to="../" style={{ textDecoration: "none" }}>
           <span className="logo">ResearchFinder</span>
         </Link>
       </div>
@@ -41,6 +41,7 @@ const Sidebar = () => {
             </li>
           </Link>
 
+
           <Link to="uploads" style={{ textDecoration: "none" }}>
             <li>
               <UploadFileIcon className="icon" />
@@ -50,19 +51,19 @@ const Sidebar = () => {
 
 
           <p className="title">LISTS</p>
-          <Link to="users" style={{ textDecoration: "none" }}>
+          <Link to="users/researchers" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>Users</span>
             </li>
           </Link>
 
-          <Link to="admins" style={{ textDecoration: "none" }}>
+          {/* <Link to="admins" style={{ textDecoration: "none" }}>
             <li>
               <StoAdminPanelSettingsIconreIcon className="icon" />
               <span>Admins</span>
             </li>
-          </Link>
+          </Link> */}
 
           <Link to="documents" style={{ textDecoration: "none" }}>
             <li>
@@ -72,10 +73,10 @@ const Sidebar = () => {
           </Link>
 
           <p className="title">USER</p>
-          <li>
+          {/* <li>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
-          </li>
+          </li> */}
           <li>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
