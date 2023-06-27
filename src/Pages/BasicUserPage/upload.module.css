@@ -1,7 +1,7 @@
 .uploadContainer {
   max-width: 600px;
-  margin-top: 5%;
-  margin-left: 25%;
+
+  margin: auto;
   padding: 2rem;
   background-color: #f2f2f281;
   border-radius: 0.5rem;
@@ -75,6 +75,6 @@ p {
 
 @media screen and (max-width: 768px) {
   .uploadContainer {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 }

@@ -143,4 +143,16 @@
 }
 /* Mobile View */
 @media (max-width: 767px) {
+  .description h1 {
+    font-size: 100;
+  }
+  .description p {
+    font-size: small;
+  }
+  .homeimage {
+    background-image: url("./cover11.png");
+    background-size: cover;
+    margin-top: -8%;
+    position: relative;
+  }
 }
