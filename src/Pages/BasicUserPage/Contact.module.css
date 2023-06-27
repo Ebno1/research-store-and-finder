@@ -118,13 +118,20 @@ button:hover {
 /* Mobile View */
 @media (max-width: 767px) {
   .servicepage {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .serviceitem {
     padding: 2rem;
     margin-left: 10%;
     margin-right: 10%;
+  }
+  .serviceitem h2 {
+    font-size: large;
+  }
+  .ourservice::after {
+    bottom: 3px;
+    height: 2px;
   }
 }
 

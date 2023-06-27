@@ -16,7 +16,9 @@ const Header = () => {
           className={classes.logo}
           style={{ textDecoration: "none" }}
         >
-          <b>Thesis</b> Finder
+          <h3>
+            <b>Research</b> Finder
+          </h3>
         </Link>
         <nav className={classes.nav}>
           <ul>

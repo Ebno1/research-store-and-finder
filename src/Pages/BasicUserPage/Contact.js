@@ -25,6 +25,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
 // import React from "react";
 // import classes from "./Contact.module.css";
 

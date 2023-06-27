@@ -11,7 +11,7 @@ function HomePage() {
     <div className={classes.App}>
       <div className={classes.homeimage}>
         <div className={classes.description}>
-          <h1>Thesis store & finder</h1>
+          <h1>Research store & finder</h1>
           <p>
             "Discover, Connect, Succeed: The Ultimate Thesis Store & Finder -
             Your One-Stop Solution for Academic Excellence!"

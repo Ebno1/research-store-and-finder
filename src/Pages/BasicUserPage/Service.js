@@ -16,7 +16,7 @@ const Service = () => {
           <div className={classes.fphoto}>
             <img src={data} alt="Book" />
           </div>
-          <h3>Thesis Store</h3>
+          <h3>Research Store</h3>
           <p>
             Unlock a Wealth of Knowledge - Browse, Access, and Download a Wide
             Range of Thesis Papers from Renowned Universities, All in One
