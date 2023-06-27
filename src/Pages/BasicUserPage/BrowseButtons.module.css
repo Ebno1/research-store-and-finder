@@ -1,4 +1,4 @@
-.group {
+/* .group {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .group {
     padding: 2rem;
   }
@@ -45,4 +45,4 @@
   .group button {
     font-size: 16px;
   }
-}
+}  */
